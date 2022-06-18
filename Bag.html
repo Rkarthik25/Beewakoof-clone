@@ -363,7 +363,7 @@
 </body>
 </html>
 <script>
-    var bagData = JSON.parse(localStorage.getItem("bagItem")) || [];
+    var bagData = JSON.parse(localStorage.getItem("cart")) || [];
     var bag = [];
     console.log(bagData);
     var ParentDiv  = document.getElementById("ParentDiv");
@@ -412,7 +412,7 @@
         var divImg = document.createElement("div");
         divImg.setAttribute("id","divImg");
         var img = document.createElement("img");
-        img.setAttribute("src",item.imgUrl);
+        img.setAttribute("src",item.imageUrl);
 
         //bottom buttom creation
         var removeFromBag = document.createElement("button");
@@ -446,7 +446,7 @@
     function removeFrom(index)
     {
         bagData.splice(index,1)
-            localStorage.setItem("bagItem",JSON.stringify(bagData));
+            localStorage.setItem("cart",JSON.stringify(bagData));
             display(bagData);
             window.location.reload();
     }
@@ -457,7 +457,7 @@
        var totalmrp = document.querySelector(".totalmrp");
         //var it = item.map
         var sum = 0
-        var data = JSON.parse(localStorage.getItem("bagItem"));
+        var data = JSON.parse(localStorage.getItem("cart"));
         var res =data.map(function (ele) {
                 return sum = sum+ele.price;
                 });

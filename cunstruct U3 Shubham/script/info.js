@@ -51,6 +51,6 @@ let infoarr=JSON.parse(localStorage.getItem("infokey"))
             console.log(el)
            cartData.push(el)
             localStorage.setItem("cart",JSON.stringify(cartData))
-            window.location.href="#"
+            window.location.href="./Bag.html"
      
         }
